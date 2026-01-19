@@ -19,8 +19,8 @@ const fs=require("fs");
 // fs.writeFileSync(fd,"hello")
 
 
-fs.writeFileSync("dummy.txt","hello",{encoding:"utf-8",flag:"r"}); //apneap close ho jayega
-fs.readFileSync("dummy.txt","utf-8");
+// fs.writeFileSync("dummy.txt","hello",{encoding:"utf-8",flag:"r"}); //apneap close ho jayega
+// fs.readFileSync("dummy.txt","utf-8");
 
 fs.writeFileSync("dummy.txt","data hello",(err,data)=>{
     if(err){
