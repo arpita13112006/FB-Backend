@@ -19,14 +19,16 @@ const fs=require("fs");
 // fs.writeFileSync(fd,"hello")
 
 
-// fs.writeFileSync("dummy.txt","hello",{encoding:"utf-8",flag:"r"}); //apneap close ho jayega
-// fs.readFileSync("dummy.txt","utf-8");
+// fs.writeFileSync("dummy.txt","hello",{encoding:"utf-8",flag:"w"}); //apneap close ho jayega
+// const data=fs.readFileSync("dummy.txt","utf-8");
+// console.log(data);
 
-fs.writeFileSync("dummy.txt","data hello",(err,data)=>{
+
+fs.writeFile("dummy.txt","data hello",(err,data)=>{
     if(err){
         console.log(err);
     }else{
-        console.log(data);
+        console.log("file written successfully");
     }
 })
 
