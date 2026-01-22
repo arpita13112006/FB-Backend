@@ -1,7 +1,7 @@
 // printmsg=require("./first.js");
 // printmsg()
 
-variable=require("./first.js");
+// variable=require("./first.js");
 
 // const data=require("./first.js"); //default
 // data.info()
@@ -14,3 +14,15 @@ variable=require("./first.js");
 
 // const data=require("./first.js");
 // data.addition();
+
+const http=require("http");
+
+const server=http.createServer((req,res) => {
+
+});
+server.listen(8000,'localhost',(err) => {
+    if(err){
+        console.log(err);
+    }
+    console.log("server started at http://localhost:8000 successfully");
+});

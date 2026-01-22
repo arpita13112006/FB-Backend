@@ -24,12 +24,11 @@ const fs=require("fs");
 // console.log(data);
 
 
-fs.writeFile("dummy.txt","data hello",(err,data)=>{
-    if(err){
-        console.log(err);
-    }else{
-        console.log("file written successfully");
-    }
-})
-
+// fs.writeFile("dummy.txt","data hello",(err,data)=>{
+//     if(err){
+//         console.log(err);
+//     }else{
+//         console.log("file written successfully");
+//     }
+// })
 
