@@ -18,7 +18,8 @@
 const http=require("http");
 
 const server=http.createServer((req,res) => {
-
+    console.log(req);
+    res.end("server started successfully");
 });
 server.listen(8000,'localhost',(err) => {
     if(err){
