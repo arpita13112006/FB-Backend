@@ -1,4 +1,4 @@
-const fs=require("fs");
+// const fs=require("fs");
 // const fh=fs.openSync("secfb","w");
 // fs.writeFileSync(fh,"i am arpita");
 // fh.close(fh);
@@ -32,3 +32,7 @@ const fs=require("fs");
 //     }
 // })
 
+const url=require('url');
+const myurl="http\\localhost.com";
+const obj=url.parse(myurl,true);
+console.log(obj);
