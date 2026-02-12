@@ -20,6 +20,13 @@ app.get("/search",(req,res)=>{
 app.use((req,res)=>{
     res.status(404).send("page not found");
 })
-app.listen(5200);
 
-//express ke andar json ko kese render kroge
+app.get('/user',(req,res)=>{
+      const user={
+        name:'arpita',
+        age:'22'
+      };
+      res.json(user);
+});
+app.listen(4200);
+
