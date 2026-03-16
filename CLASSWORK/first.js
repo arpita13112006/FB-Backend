@@ -3,7 +3,8 @@
 // }
 // module.exports=printmsg;  //simple function export  //default
 
-variable=console.log("arpita patra");  
+
+// variable=console.log("arpita patra");  
  //variable 
 
 // function infor(){

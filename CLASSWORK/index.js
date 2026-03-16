@@ -1,7 +1,7 @@
-// const fs=require("fs");
+const fs=require("fs");
 // const fh=fs.openSync("secfb","w");
 // fs.writeFileSync(fh,"i am arpita");
-// fh.close(fh);
+// fs.close(fh);
 
 // fs.writeFileSync("secfb","GLA University");   //create bhi krta h file uar write bhi
 // console.log(fs.readFileSync("secfb","utf8"));
@@ -11,11 +11,11 @@
 
 // fs.unlinkSync("secfb"); //delete the file
 
-// fs.copyFileSync("secfb","mili");  // copy ho gya nye file mili me
+// fs.copyFileSync("secfb","himani");  // copy ho gya nye file mili me
 
-// fs.renameSync("secfb","newfile");   //secfb old file ko new file rename kr diya 
+// fs.renameSync("mili","himani");   //secfb old file ko new file rename kr diya 
 
-// const fd=openSync("dummy.txt","w+")
+// const fd=fs.openSync("dummy.txt","w+")
 // fs.writeFileSync(fd,"hello")
 
 
@@ -33,6 +33,6 @@
 // })
 
 const url=require('url');
-const myurl="http\\localhost.com";
+const myurl="http://localhost.com";
 const obj=url.parse(myurl,true);
 console.log(obj);

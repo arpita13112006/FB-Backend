@@ -32,6 +32,19 @@ EventEmitter.on("order pizza", () => {
     console.log("Order received");
 });
 EventEmitter.on("order pizza", eventhandler);
-EventEmitter.emit("order pizza");
+EventEmitter.emit("order pizza",true,false);
 
+
+// const event=require("events");
+// const EventEmitter=new event.EventEmitter();
+// const eventhandler=(extra_cheese,olive)=>{
+//     console.log("Start preparing pizza");
+//     console.log(`Extra cheese: ${extra_cheese}`);
+//     console.log(`olive: ${olive}`);
+// };
+// EventEmitter.on("order pizza",()=>{
+//     console.log("order received");
+// });
+// EventEmitter.on("order pizza",eventhandler);
+// EventEmitter.emit("order pizza",true,false);
 

@@ -18,15 +18,15 @@
 // const http=require("http");
 
 // const server=http.createServer((req,res) => {
-//     console.log(req);
+//     console.log(req.url);
 //     res.end("server started successfully");
 // });
-// server.listen(8000,'localhost',(err) => {
+// server.listen(9000,'localhost',(err) => {
 //     if(err){
 //         console.log(err);
 //     }
-//     console.log("server started at http://localhost:8000 successfully");
+//     console.log("server started at http://localhost:9000 successfully");
 // });
 
-const path=require(path);
-path="C:\Users\admin\f.txt";
+// const path=require(path);
+// path="C:\Users\admin\f.txt";
