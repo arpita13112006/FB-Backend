@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>this is header file.</h1>
+    <h1><%= stu.name %></h1>
+    <p>Age: <%= stu.age %></p>
+    <p>Email: <%= stu.email %></p>
+
+<ul>
+  <% stu.hobbies.forEach(hobby => { %>
+    <li><%= hobby %></li>
+  <% }) %>
+</ul>
+</body>
+</html>
