@@ -1,5 +1,6 @@
 const express=require('express');
 const app=express();
+const errorHandler=require('./middleware/error');
 app.get("/",(req,res,next)=>{
     res.send("welcome to home page");
 })
@@ -10,4 +11,5 @@ app.use((req,res,next)=>{
     next(error);
 }
 )
+app.use(errorHandler);
 app.listen(4100);
