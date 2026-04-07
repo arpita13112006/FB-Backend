@@ -77,24 +77,66 @@ app.get('/api/users/:id',(req,res)=>{
 
 app.post('/api/users', (req, res) => {
     const data = req.body;
-
     fs.writeFile(
         "users_400.json",
         JSON.stringify(data),
         (err) => {
             if (err) return res.json({ msg: "error" });
-
             return res.json({ msg: "success",data:data });
         }
     );
 });
-app.patch('/api/users/:id',(req,res)=>{
-    //we will do with mongodb 
-})
 
-app.delete('/api/users/:id',(req,res)=>{
 
-})
+app.patch('/users/:id', (req, res) => {
+    const id = Number(req.params.id);
+    fs.readFile('users_400.json', 'utf-8', (err, data) => {
+        let users = JSON.parse(data);
+        const user = users.find(u => u.id === id);
+        if (!user) return res.send("user not found");
+        fs.writeFile('users_400.json', JSON.stringify(users), () => {
+            res.send("PATCH done");
+        });
+    });
+});
+
+
+app.delete('/users/:id', (req, res) => {
+    const id = Number(req.params.id);
+    fs.readFile('users_400.json', 'utf-8', (err, data) => {
+        let users = JSON.parse(data);
+        users = users.filter(u => u.id !== id);
+        fs.writeFile('users_400.json', JSON.stringify(users), () => {
+            res.send("DELETE done");
+        });
+    });
+});
+
+
+app.put('/users/:id', (req, res) => {
+    const id = Number(req.params.id);
+    fs.readFile('users_400.json', 'utf-8', (err, data) => {
+        let users = JSON.parse(data);
+        const index = users.findIndex(u => u.id === id);
+        if (index === -1) return res.send("user not found");
+        users[index] = {
+            id,
+            name: req.body.name,
+            age: req.body.age
+        };
+        fs.writeFile('users_400.json', JSON.stringify(users), () => {
+            res.send("PUT done");
+        });
+    });
+});
+
+
 app.listen(3500,()=>{
     console.log("server running on port 3500");
 });
+
+// GET 👉 Data lena (Read)👉 Server se data fetch karte hain
+// POST 👉 Naya data add karna (Create)👉 Server me new data create karte hain
+// PUT 👉 Pura update (Replace)👉 Existing data ko completely replace karta hai
+// PATCH 👉 Thoda update (Partial)👉 Sirf kuch fields update hoti hain
+// DELETE 👉 Data remove karna👉 Server se data delete karte hain
