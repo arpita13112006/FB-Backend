@@ -1,3 +1,5 @@
+//json format rest api
+
 const express=require('express');
 const app=express();
 const fs=require('fs');
