@@ -1,22 +1,21 @@
-const mongoose = require('mongoose');
+const { nanoid } = require('nanoid');
+const Url = require('../models/urlModel');
 
-const urlSchema = new mongoose.Schema(
-  {
-    originalUrl: {
-      type: String,
-      required: true   
-    },
-    shortUrl: {
-      type: String,
-      required: true,
-      unique: true
+async function createShortUrl(req, res) {
+    const { originalUrl } = req.body;
+
+    if (!originalUrl) {
+        return res.status(400).json({ error: 'Original URL is required' });
     }
-  },
-  {
-    timestamps: true   
+
+    const shortid = nanoid(7);
+
+    await Url.create({
+        originalUrl,
+        shortUrl: shortid
+    });
+
+    res.json({ shortUrl: shortid });
 }
-);
 
-const Url = mongoose.model('Url', urlSchema);
-
-module.exports = Url;
+module.exports = { createShortUrl };
